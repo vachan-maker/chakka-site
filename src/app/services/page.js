@@ -21,6 +21,11 @@ function Services() {
                     <p>QR Code Generator</p>
                 </div>
                 </Link>
+                <Link href="/dice">
+                <div className='border border-amber-200 rounded-md p-10 hover:bg-[#040a05] cursor-pointer'>
+                    <p>Roll a Dice</p>
+                </div>
+                </Link>
 
             </div>
         </div>
