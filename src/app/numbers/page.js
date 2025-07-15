@@ -27,7 +27,7 @@ function Numbers() {
         const value = e.target.value
         setInput(value)
 
-        const converted = value.split('').map((char) => numbers[char]).join('')
+        const converted = value.split(' ').map((char) => numbers[char]).join('')
 
         setOutput(converted)
 
