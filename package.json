@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google/genai": "^1.9.0",
     "daisyui": "^5.0.46",
     "framer-motion": "^12.23.6",
     "next": "15.3.5",
