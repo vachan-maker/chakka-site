@@ -28,6 +28,15 @@ function Services() {
                 </Link>
 
             </div>
+                        <div className='min-h-dvh p-10'>
+                <Link href="https://nira20.vercel.app">
+                <div className='border border-amber-200 rounded-md p-10 hover:bg-[#040a05] cursor-pointer'>
+                    <p>Nira</p>
+                    <p>Developed by Abhiram A.K</p>
+                </div>
+                </Link>
+
+            </div>
         </div>
         </>
       
