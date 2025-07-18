@@ -24,7 +24,7 @@ const services = [
         name:"Nira",
         description: "A puzzle game",
         exturl:"https://nira20.vercel.app",
-        category: ['game','fun'],
+        category: ['fun'],
         created_by:'Abhiram A.K'
     },
     {
@@ -43,35 +43,59 @@ const services = [
         id:6,
         name:"Lova Calculator",
         description:"Displays a love meter based on your crush",
-        exturl:"https://love-calc-project.netlify.app/"
+        exturl:"https://love-calc-project.netlify.app/",
+        category:['fun']
     },
     {
         id:7,
         name:"Random Text Generator",
         description: "Generate random text with AI",
         selfurl:"/random-text"
+    },
+    {
+        id:8,
+        name:"Chakka Paper Scissors",
+        description: "A modern take on a classic game.",
+        exturl:"https://chakka-paper-scissors.vercel.app/",
+        category: ["fun"]
     }
 ]
 function Services() {
     return (
         <>
-            <div className="flex flex-col md:flex-row min-h-dvh">
+            <div className="flex flex-col md:flex-row min-h-dvh justify-around">
                 <div className="flex flex-col items-center justify-center  border-amber-300 border-r-2">
                     <Link href='/'>
                         <Image src={chakka} width={1024} height={1024} alt='Image of a jackfruit' className='w-75 md:w-75 mx-auto p-10' />
                     </Link>
                 </div>
-                <div className='min-h-dvh p-10'>
+                <div className='p-10 flex flex-col gap-6'>
+                    <h2 className={`${RIT_Kutty.className} text-center text-[#fcce0c] text-6xl p-5 md:text-6xl`}>ടൂൾസ്</h2>
                     {services.map((service)=>{
-                        return (<Link href={service.selfurl?service.selfurl:service.exturl} key={service.id}>
-                            <div className='border border-amber-200 rounded-md p-5 hover:bg-base-300 cursor-pointer m-5 bg:base-300'>
-                                <p>{service.name}</p>
-                                <p>{service.description}</p>
-                                {service.category?.map((cat,index)=>{
-                                    return <div className='badge badge-soft badge-primary mr-2 mt-2' key={index}>{cat}</div>
-                                })}
-                            </div>
-                        </Link>);
+                        if(service.category!='fun'){
+                        return(
+                            <Link href={service.selfurl || service.exturl} key={service.id}>
+                                <div className='border border-amber-200 rounded-md p-5 hover:bg-base-300 cursor-pointer bg-base-300 m-2'>
+                                    <p>{service.name}</p>
+                                    <p>{service.description}</p>
+                                </div>
+                            </Link>
+                        )}
+                    })}
+                </div>
+                <div className='p-10 flex flex-col gap-6'>
+                    <h2 className={`${RIT_Kutty.className} text-center text-[#fcce0c] text-6xl p-5 md:text-6xl`}>ഇതൊക്കെ ഒരു <br/>രസമല്ലേ!</h2>
+                    <p>Some fun apps and games</p>
+                    {services.map((service)=>{
+                        if(service.category=='fun'){
+                        return(
+                            <Link href={service.selfurl || service.exturl} key={service.id}>
+                                <div className='border border-amber-200 rounded-md p-5 hover:bg-base-300 cursor-pointer bg-base-300 m-2'>
+                                    <p>{service.name}</p>
+                                    <p>{service.description}</p>
+                                </div>
+                            </Link>
+                        )}
                     })}
                 </div>
             </div>
