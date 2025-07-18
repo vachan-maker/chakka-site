@@ -36,6 +36,12 @@ const services = [
         name:"Business Card Creator",
         description:"Create a simple business card for yourself",
         exturl: "http://vachan-maker.github.io/business-card-creator/"
+    },
+    {
+        id:6,
+        name:"Lova Calculator",
+        description:"Displays a love meter based on your crush",
+        exturl:"https://love-calc-project.netlify.app/"
     }
 ]
 function Services() {
