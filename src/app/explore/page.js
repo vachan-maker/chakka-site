@@ -23,7 +23,9 @@ const services = [
         id:3,
         name:"Nira",
         description: "A puzzle game",
-        exturl:"https://nira20.vercel.app"
+        exturl:"https://nira20.vercel.app",
+        category: ['game','fun'],
+        created_by:'Abhiram A.K'
     },
     {
         id:4,
@@ -42,6 +44,12 @@ const services = [
         name:"Lova Calculator",
         description:"Displays a love meter based on your crush",
         exturl:"https://love-calc-project.netlify.app/"
+    },
+    {
+        id:7,
+        name:"Random Text Generator",
+        description: "Generate random text with AI",
+        selfurl:"/random-text"
     }
 ]
 function Services() {
@@ -56,9 +64,12 @@ function Services() {
                 <div className='min-h-dvh p-10'>
                     {services.map((service)=>{
                         return (<Link href={service.selfurl?service.selfurl:service.exturl} key={service.id}>
-                            <div className='border border-amber-200 rounded-md p-5 hover:bg-[#040a05] cursor-pointer m-5'>
+                            <div className='border border-amber-200 rounded-md p-5 hover:bg-base-300 cursor-pointer m-5 bg:base-300'>
                                 <p>{service.name}</p>
                                 <p>{service.description}</p>
+                                {service.category?.map((cat,index)=>{
+                                    return <div className='badge badge-soft badge-primary mr-2 mt-2' key={index}>{cat}</div>
+                                })}
                             </div>
                         </Link>);
                     })}
