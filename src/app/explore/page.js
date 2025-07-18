@@ -58,6 +58,12 @@ const services = [
         description: "A modern take on a classic game.",
         exturl:"https://chakka-paper-scissors.vercel.app/",
         category: ["fun"]
+    },
+    {
+        id:9,
+        name:"Whatsapp Chat Unknown Number",
+        description: "Chat with anyone without saving them to your contacts",
+        exturl:"https://wa-chat-number.pages.dev/"
     }
 ]
 function Services() {
@@ -69,14 +75,14 @@ function Services() {
                         <Image src={chakka} width={1024} height={1024} alt='Image of a jackfruit' className='w-75 md:w-75 mx-auto p-10' />
                     </Link>
                 </div>
-                <div className='p-10 flex flex-col gap-6'>
+                <div className='p-10 flex flex-col gap-6 max-w-lg'>
                     <h2 className={`${RIT_Kutty.className} text-center text-[#fcce0c] text-6xl p-5 md:text-6xl`}>ടൂൾസ്</h2>
                     {services.map((service)=>{
                         if(service.category!='fun'){
                         return(
                             <Link href={service.selfurl || service.exturl} key={service.id}>
                                 <div className='border border-amber-200 rounded-md p-5 hover:bg-base-300 cursor-pointer bg-base-300 m-2'>
-                                    <p>{service.name}</p>
+                                    <p className='font-bold mb-1.5'>{service.name}</p>
                                     <p>{service.description}</p>
                                 </div>
                             </Link>
@@ -91,7 +97,7 @@ function Services() {
                         return(
                             <Link href={service.selfurl || service.exturl} key={service.id}>
                                 <div className='border border-amber-200 rounded-md p-5 hover:bg-base-300 cursor-pointer bg-base-300 m-2'>
-                                    <p>{service.name}</p>
+                                    <p className='font-bold mb-1.5'>{service.name}</p>
                                     <p>{service.description}</p>
                                 </div>
                             </Link>
