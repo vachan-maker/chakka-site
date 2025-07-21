@@ -1,6 +1,8 @@
 "use client"
 import { useEffect, useState } from "react"
+import Header from "@/app/components/Header";
 import { QRCodeCanvas } from "qrcode.react"
+
 function GenerateRandomText() {
     const [text,setText] = useState('')
     const [loading,setLoading] = useState(false)
@@ -24,6 +26,7 @@ function GenerateRandomText() {
         }
     return (
         <>
+            <Header/>
             <section className="mx-auto my-0 p-5 max-w-lg">
                 <h1 className="font-bold text-2xl text-center">Generate Random Text</h1>
                 <div className="flex flex-col gap-5 items-center justify-center">

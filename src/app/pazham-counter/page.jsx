@@ -4,7 +4,8 @@ const RIT_Kutty = localFont({
     src: '../../../fonts/RIT-Kutty-Bold.woff2',
     display: 'swap',
 });
-import Image from "next/image"
+import Image from "next/image";
+import Header from "@/app/components/Header";
 import {useEffect, useState} from "react";
 function PazhamCounter() {
     const [counter, setCounter] = useState(0);
@@ -23,7 +24,8 @@ function PazhamCounter() {
     },[counter]);
     return (
         <>
-            <div className='min-h-dvh bg-blue-200 flex flex-col items-center justify-evenly'>
+            <Header></Header>
+            <div className='min-h-dvh bg-gradient-to-r from-blue-200 to-blue-300 flex flex-col items-center justify-evenly'>
                 <div>
                 <h1 className={`${RIT_Kutty.className} text-[#2c3e50] text-6xl md:text-8xl text-center`}>പഴം Counter</h1>
                     <p className='text-[#2c3e50] text-center'>Click the banana to increase the count!</p>

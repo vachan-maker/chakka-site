@@ -112,11 +112,13 @@ function Services() {
                     <Link href='/'>
                         <Image src={chakka} width={1024} height={1024} alt='Image of a jackfruit' className='w-75 md:w-75 mx-auto p-10' />
                     </Link>
-                    <button className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl`} onClick={playAudio}>ഒരു പാട്ട് ഇട് മച്ചാനെ</button>
+                    <button className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-md lg:btn-lg xl:btn-xl`} onClick={playAudio}>ഒരു പാട്ട് ഇട് മച്ചാനെ</button>
                     {playing && <button className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl`} onClick={stopAudio}>Onnu off akkaamo!</button> }
                 </div>
-                <div className='p-10 flex flex-col gap-6 max-w-lg'>
+                <div className='p-10 flex flex-col gap-6 max-w-lg max-h-3/4'>
+                <div className='md:min-h-42'>
                     <h2 className={`${RIT_Kutty.className} text-center text-[#fcce0c] text-6xl p-5 md:text-6xl`}>ടൂൾസ്</h2>
+                    </div>
                     {services.map((service)=>{
                         if(service.category!='fun'){
                         return(
@@ -130,8 +132,9 @@ function Services() {
                     })}
                 </div>
                 <div className='p-10 flex flex-col gap-6'>
+                    <div className='md:min-h-42 flex items-center justify-center'>
                     <h2 className={`${RIT_Kutty.className} text-center text-[#fcce0c] text-6xl p-5 md:text-6xl`}>ഇതൊക്കെ ഒരു <br/>രസമല്ലേ!</h2>
-                    <p>Some fun apps and games</p>
+                    </div>
                     {services.map((service)=>{
                         if(service.category=='fun'){
                         return(

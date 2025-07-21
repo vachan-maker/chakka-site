@@ -1,6 +1,7 @@
 "use client"
-import { useState } from "react"
-import { QRCodeCanvas } from "qrcode.react"
+import { useState } from "react";
+import { QRCodeCanvas } from "qrcode.react";
+import Header from "@/app/components/Header";
 function QRCode() {
     const [input,setInput] = useState('')
     const [qrText, setQRText] = useState('')
@@ -10,6 +11,7 @@ function QRCode() {
     }
     return (
         <>
+            <Header/>
             <section className="min-h-screen flex items-center justify-center flex-col gap-10">
                 <h1 className="font-bold text-2xl text-center">QR Code Generator</h1>
                 <p>Convert Text/URL to a QR Code. Press and Hold QR Code to save the QR Code.</p>
