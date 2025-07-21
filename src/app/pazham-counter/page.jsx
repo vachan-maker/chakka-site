@@ -7,14 +7,18 @@ const RIT_Kutty = localFont({
 import Image from "next/image"
 import {useEffect, useState} from "react";
 function PazhamCounter() {
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(()=>{
+        const saved = localStorage.getItem("count");
+        const initialValue = JSON.parse(saved);
+        return initialValue || 0;
+    });
 
     const increaseCounter = () => {
         setCounter((prevCounter) => prevCounter + 1);
     }
     useEffect(() => {
         localStorage.setItem("count",JSON.stringify(counter));
-    }[counter]);
+    },[counter]);
     return (
         <>
             <div className='min-h-dvh bg-blue-200 flex flex-col items-center justify-evenly'>
