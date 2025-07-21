@@ -69,6 +69,13 @@ const services = [
         name:"Whatsapp Chat Unknown Number",
         description: "Chat with anyone without saving them to your contacts",
         exturl:"https://wa-chat-number.pages.dev/"
+    },
+    {
+        id:10,
+        name:"പഴം Counter",
+        description: "Increase the count of bananas",
+        selfurl: "/pazham-counter",
+        category:["fun"]
     }
 ]
 function Services() {
