@@ -1,7 +1,12 @@
+'use client'
 import chakka from '../../../public/chakka3.png'
 import localFont from 'next/font/local';
 import Image from 'next/image'
 import Link from 'next/link';
+import {useRef, useState,useEffect} from "react";
+import {usePathname} from "next/navigation";
+
+
 const RIT_Kutty = localFont({
     src: '../../../fonts/RIT-Kutty-Bold.woff2',
     display: 'swap',
@@ -67,13 +72,41 @@ const services = [
     }
 ]
 function Services() {
+    const [playing, setPlaying] = useState(false);
+    const audioRef = useRef(null)
+    const pathname = usePathname();
+    const playAudio = () => {
+        if (!audioRef.current) {
+            const audio = new Audio('/audio.mp3');
+            audioRef.current = audio;
+            audioRef.current.currentTime = 110;
+            audioRef.current.play();
+            setPlaying(true);
+
+        }
+
+    }
+    const stopAudio = () => {
+        if (audioRef.current) {
+            audioRef.current.pause();
+            setPlaying(false);
+            audioRef.current = null;
+        }
+    }
+
+    useEffect(() => {
+        return () =>{
+        stopAudio()};
+    },[])
     return (
         <>
             <div className="flex flex-col md:flex-row min-h-dvh justify-around">
-                <div className="flex flex-col items-center justify-center  border-amber-300 border-r-2">
+                <div className="flex flex-col items-center gap-20 border-amber-300 border-r-2">
                     <Link href='/'>
                         <Image src={chakka} width={1024} height={1024} alt='Image of a jackfruit' className='w-75 md:w-75 mx-auto p-10' />
                     </Link>
+                    <button className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl`} onClick={playAudio}>ഒരു പാട്ട് ഇട് മച്ചാനെ</button>
+                    {playing && <button className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl`} onClick={stopAudio}>Onnu off akkaamo!</button> }
                 </div>
                 <div className='p-10 flex flex-col gap-6 max-w-lg'>
                     <h2 className={`${RIT_Kutty.className} text-center text-[#fcce0c] text-6xl p-5 md:text-6xl`}>ടൂൾസ്</h2>
