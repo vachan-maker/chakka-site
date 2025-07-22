@@ -87,6 +87,7 @@ const services = [
         creator: "Sana Ashraf"
     }
 ]
+services.sort((a,b)=> a.name.localeCompare(b.name));
 function Services() {
     const [playing, setPlaying] = useState(false);
     const audioRef = useRef(null)
