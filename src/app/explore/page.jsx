@@ -82,7 +82,7 @@ const services = [
         id:11,
         name: "Chakka Facts",
         description: "Get a random fact about Jackfruit",
-        exturl:"",
+        exturl:"https://sanaashraf6666.github.io/Chakka-Facts/",
         category:["fun"],
         creator: "Sana Ashraf"
     }
