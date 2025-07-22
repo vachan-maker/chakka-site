@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 import {useRef, useState,useEffect} from "react";
 import {usePathname} from "next/navigation";
+import Card from "@/app/components/Card";
 
 
 const RIT_Kutty = localFont({
@@ -146,15 +147,9 @@ function Services() {
                     <h2 className={`${RIT_Kutty.className} text-center text-[#fcce0c] text-6xl p-5 md:text-6xl`}>ഇതൊക്കെ ഒരു <br/>രസമല്ലേ!</h2>
                     </div>
                     {services.map((service)=>{
-                        if(service.category=='fun'){
+                        if(service.category==='fun'){
                         return(
-                            <Link href={service.selfurl || service.exturl} key={service.id}>
-                                <div className='border border-amber-200 rounded-md p-5 hover:bg-base-300 cursor-pointer bg-base-300 m-2'>
-                                    <p className='font-bold mb-1.5'>{service.name}</p>
-                                    <p>{service.description}</p>
-                                   {service.creator && <p className='mb-2 mt-4 text-sm'><b>Created by:</b> {service.creator}</p>}
-                                </div>
-                            </Link>
+                            <Card service={service} key={service.id}/>
                         )}
                     })}
                 </div>
