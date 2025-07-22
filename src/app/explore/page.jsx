@@ -70,14 +70,14 @@ export default function Services() {
                         />
                     </Link>
                     <button
-                        className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-md lg:btn-lg xl:btn-xl`}
+                        className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-xl`}
                         onClick={playAudio}
                     >
                         ഒരു പാട്ട് ഇട് മച്ചാനെ
                     </button>
                     {playing && (
                         <button
-                            className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl`}
+                            className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-xl`}
                             onClick={stopAudio}
                         >
                             Onnu off akkaamo!
