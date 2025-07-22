@@ -1,7 +1,7 @@
 import Link from 'next/link';
-export default function Card(service) {
+export default function Card({service}) {
     return (
-        <Link href={service.selfurl || service.exturl} key={service.id}>
+        <Link href={service.selfurl || service.exturl}>
             <div className='border border-amber-200 rounded-md p-5 hover:bg-base-300 cursor-pointer bg-base-300 m-2'>
                 <p className='font-bold mb-1.5'>{service.name}</p>
                 <p>{service.description}</p>

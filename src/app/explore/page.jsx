@@ -4,7 +4,6 @@ import localFont from 'next/font/local';
 import Image from 'next/image'
 import Link from 'next/link';
 import {useRef, useState,useEffect} from "react";
-import {usePathname} from "next/navigation";
 import Card from "@/app/components/Card";
 
 
@@ -43,7 +42,7 @@ const services = [
         id:5,
         name:"Business Card Creator",
         description:"Create a simple business card for yourself",
-        exturl: "http://vachan-maker.github.io/business-card-creator/"
+        exturl: "https://vachan-maker.github.io/business-card-creator/"
     },
     {
         id:6,
@@ -92,7 +91,6 @@ services.sort((a,b)=> a.name.localeCompare(b.name));
 function Services() {
     const [playing, setPlaying] = useState(false);
     const audioRef = useRef(null)
-    const pathname = usePathname();
     const playAudio = () => {
         if (!audioRef.current) {
             const audio = new Audio('/audio.mp3');
@@ -130,27 +128,16 @@ function Services() {
                 <div className='md:min-h-42'>
                     <h2 className={`${RIT_Kutty.className} text-center text-[#fcce0c] text-6xl p-5 md:text-6xl`}>ടൂൾസ്</h2>
                     </div>
-                    {services.map((service)=>{
-                        if(service.category!='fun'){
-                        return(
-                            <Link href={service.selfurl || service.exturl} key={service.id}>
-                                <div className='border border-amber-200 rounded-md p-5 hover:bg-base-300 cursor-pointer bg-base-300 m-2'>
-                                    <p className='font-bold mb-1.5'>{service.name}</p>
-                                    <p>{service.description}</p>
-                                </div>
-                            </Link>
-                        )}
+                    {services.filter((service)=> !service.category?.includes('fun')).map((service)=>{
+                        return <Card service={service} key={service.id}/>
                     })}
                 </div>
                 <div className='p-10 flex flex-col gap-6'>
                     <div className='md:min-h-42 flex items-center justify-center'>
                     <h2 className={`${RIT_Kutty.className} text-center text-[#fcce0c] text-6xl p-5 md:text-6xl`}>ഇതൊക്കെ ഒരു <br/>രസമല്ലേ!</h2>
                     </div>
-                    {services.map((service)=>{
-                        if(service.category==='fun'){
-                        return(
-                            <Card service={service} key={service.id}/>
-                        )}
+                    {services.filter((service)=> service.category?.includes('fun')).map((service)=>{
+                        return(<Card service={service} key={service.id}/>);
                     })}
                 </div>
             </div>
