@@ -30,7 +30,7 @@ const services = [
         description: "A puzzle game",
         exturl:"https://nira20.vercel.app",
         category: ['fun'],
-        created_by:'Abhiram A.K'
+        creator:'Abhiram A.K'
     },
     {
         id:4,
@@ -62,7 +62,8 @@ const services = [
         name:"Chakka Paper Scissors",
         description: "A modern take on a classic game.",
         exturl:"https://chakka-paper-scissors.vercel.app/",
-        category: ["fun"]
+        category: ["fun"],
+        creator: "Abhiram A.K"
     },
     {
         id:9,
@@ -76,6 +77,14 @@ const services = [
         description: "Increase the count of bananas",
         selfurl: "/pazham-counter",
         category:["fun"]
+    },
+    {
+        id:11,
+        name: "Chakka Facts",
+        description: "Get a random fact about Jackfruit",
+        exturl:"",
+        category:["fun"],
+        creator: "Sana Ashraf"
     }
 ]
 function Services() {
@@ -142,6 +151,7 @@ function Services() {
                                 <div className='border border-amber-200 rounded-md p-5 hover:bg-base-300 cursor-pointer bg-base-300 m-2'>
                                     <p className='font-bold mb-1.5'>{service.name}</p>
                                     <p>{service.description}</p>
+                                   {service.creator && <p className='mb-2 mt-4 text-sm'><b>Created by:</b> {service.creator}</p>}
                                 </div>
                             </Link>
                         )}
