@@ -120,7 +120,7 @@ function Services() {
             <div className="flex flex-col md:flex-row min-h-dvh justify-around">
                 <div className="flex flex-col items-center gap-20 border-amber-300 border-r-2">
                     <Link href='/'>
-                        <Image src={chakka} width={1024} height={1024} alt='Image of a jackfruit' className='w-75 md:w-75 mx-auto p-10' />
+                        <Image src={playing && `/chakka-mascot.png` || chakka} width={512} height={768} alt='Image of a jackfruit' className='w-75 md:w-75 mx-auto p-10' />
                     </Link>
                     <button className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-md lg:btn-lg xl:btn-xl`} onClick={playAudio}>ഒരു പാട്ട് ഇട് മച്ചാനെ</button>
                     {playing && <button className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl`} onClick={stopAudio}>Onnu off akkaamo!</button> }
