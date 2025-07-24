@@ -9,7 +9,12 @@ export default function Page() {
     const [y,setY] = useState(0);
     const [fun,setFun] = useState("Click here!");
     const [count,setCount] = useState(0);
+    const audio = new Audio('/button2.mp3');
     const handleClick = () => {
+        const playAudio = () => {
+            audio.play()
+        }
+        playAudio();
         const randomX = Math.floor(Math.random() * (window.innerWidth-200));
         const randomY = Math.floor(Math.random() * (window.innerHeight-200));
         const funList = ['Ivide njekku😶‍🌫️','ayye pattiche🤭','ingottu','njan ivide🙂‍↔️','veendum pattiche','😈I can do this all day','njan scene alle!🤣','🤣Hehehe','🙂‍↔️ Tada!','Kooi!🥸','Potte saramilla🥲','Machane...ivide😏','i am unstoppable!']
