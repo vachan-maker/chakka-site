@@ -23,7 +23,8 @@ const services = [
     { id: 8, name: "Chakka Paper Scissors", description: "A modern take on a classic game.", exturl: "https://chakka-paper-scissors.vercel.app/", category: ["fun"], creator: "Abhiram A.K" },
     { id: 9, name: "Whatsapp Chat Unknown Number", description: "Chat with anyone without saving them to your contacts", exturl: "https://wa-chat-number.pages.dev/" },
     { id: 10, name: "പഴം Counter", description: "Increase the count of bananas", selfurl: "/pazham-counter", category: ["fun"] },
-    { id: 11, name: "Chakka Facts", description: "Get a random fact about Jackfruit", exturl: "https://sanaashraf6666.github.io/Chakka-Facts/", category: ["fun"], creator: "Sana Ashraf" }
+    { id: 11, name: "Chakka Facts", description: "Get a random fact about Jackfruit", exturl: "https://sanaashraf6666.github.io/Chakka-Facts/", category: ["fun"], creator: "Sana Ashraf" },
+    { id:12, name:"Useless Button", description: "Chumma oru potta button...!",selfurl: "/useless-button",category: ["fun"]}
 ];
 
 services.sort((a, b) => a.name.localeCompare(b.name));
