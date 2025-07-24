@@ -1,18 +1,23 @@
 'use client'
 import {useState} from "react";
 import {useRef} from "react";
+import {useEffect} from "react";
 import Header from "@/app/components/Header";
-
 export default function Page() {
     const buttonRef = useRef();
     const [x,setX] = useState(0);
     const [y,setY] = useState(0);
     const [fun,setFun] = useState("Click here!");
     const [count,setCount] = useState(0);
-    const audio = new Audio('/button2.mp3');
+    const audioRef = useRef(null);
+    useEffect(()=>{
+        audioRef.current = new Audio('/button2.mp3');
+    },[])
     const handleClick = () => {
         const playAudio = () => {
-            audio.play()
+            if (audioRef.current){
+                audioRef.current.play();
+            }
         }
         playAudio();
         const randomX = Math.floor(Math.random() * (window.innerWidth-200));
