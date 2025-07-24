@@ -12,7 +12,7 @@ export default function Page() {
     const handleClick = () => {
         const randomX = Math.floor(Math.random() * (window.innerWidth-200));
         const randomY = Math.floor(Math.random() * (window.innerHeight-200));
-        const funList = ['Ivide njekku','ayye pattiche','ingottu','njan ivide','veendum pattiche','I can do this all day','njan scene alle!🤣','🤣Hehehe','🙂‍↔️ Tada!']
+        const funList = ['Ivide njekku😶‍🌫️','ayye pattiche🤭','ingottu','njan ivide🙂‍↔️','veendum pattiche','😈I can do this all day','njan scene alle!🤣','🤣Hehehe','🙂‍↔️ Tada!','Kooi!🥸','Potte saramilla🥲','Machane...ivide😏','i am unstoppable!']
         const random = Math.floor(Math.random() * funList.length);
         increment();
         setFun(funList[random]);
