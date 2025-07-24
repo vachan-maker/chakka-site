@@ -7,6 +7,9 @@ import { useRef, useState, useEffect } from "react"
 import Card from "@/app/components/Card"
 import ExploreColumn from "@/app/components/ExploreColumn";
 
+
+import { SiGithub } from '@icons-pack/react-simple-icons';
+
 const RIT_Kutty = localFont({
     src: '../../../fonts/RIT-Kutty-Bold.woff2',
     display: 'swap',
@@ -69,6 +72,9 @@ export default function Services() {
                             alt='Image of a jackfruit'
                             className='w-75 md:w-75 mx-auto p-10'
                         />
+                    </Link>
+                    <Link href='https://github.com/vachan-maker/chakka-site'>
+                    <SiGithub size={32} className='hover:text-yellow-300'/>
                     </Link>
                     <button
                         className={`${RIT_Kutty.className} btn btn-outline border-[#fcce0c] btn-xl`}
