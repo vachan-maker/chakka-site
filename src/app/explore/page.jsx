@@ -89,7 +89,9 @@ export default function Services() {
                         >
                             Onnu off akkaamo!
                         </button>
+
                     )}
+                    <button className='btn btn-outline border-[#fcce0c] btn-xl'>💖 Give some love</button>
                 </div>
 
                 <ExploreColumn title={'ടൂൾസ്'}>
