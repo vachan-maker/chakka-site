@@ -20,12 +20,19 @@ const riddles = [
 function DiffuseTheBomb() {
     const [time,setTime] = useState(60);
     const [currentIndex,setCurrentIndex] = useState(0);
-    const [question,setQuestion] = useState(riddles[currentIndex]);
+    const [input,setInput] = useState('');
+    const [score,setScore] = useState(0);
+    const handleInputChange = (e) => {
+        setInput(e.target.value);
+    };
 
     const handleQuestion = () => {
-        if(currentIndex < riddles.length) {
+        if(riddles[currentIndex].answer === Number(input) ){
+            setScore(score =>score+1);
+
+        }
+        if(currentIndex < riddles.length-1) {
             setCurrentIndex(currentIndex + 1);
-            setQuestion(riddles[currentIndex]);
         }
     }
     useEffect(()=>{
@@ -46,8 +53,10 @@ function DiffuseTheBomb() {
         <>
             <h1>{time}</h1>
             <div>
-                <h1 className="text-2xl">{question.question}</h1>
-                <button onClick={handleQuestion} value="Next Question">Next Question</button>
+                <h1 className="text-2xl">{riddles[currentIndex].question}</h1>
+                <b>Score: {score}</b>
+                <input type="number" className="input" value={input} onChange={handleInputChange}/>
+                <button onClick={handleQuestion} value="Next Question" className="button button-accent">Next Question</button>
             </div>
             </>
     )
