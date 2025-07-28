@@ -27,7 +27,8 @@ const services = [
     { id: 9, name: "Whatsapp Chat Unknown Number", description: "Chat with anyone without saving them to your contacts", exturl: "https://wa-chat-number.pages.dev/" },
     { id: 10, name: "പഴം Counter", description: "Increase the count of bananas", selfurl: "/pazham-counter", category: ["fun"] },
     { id: 11, name: "Chakka Facts", description: "Get a random fact about Jackfruit", exturl: "https://sanaashraf6666.github.io/Chakka-Facts/", category: ["fun"], creator: "Sana Ashraf" },
-    { id:12, name:"Useless Button", description: "Chumma oru potta button...!",selfurl: "/useless-button",category: ["fun"]}
+    { id:12, name:"Useless Button", description: "Chumma oru potta button...!",selfurl: "/useless-button",category: ["fun"]},
+    {id:13, name:"Tic Tac Toe",description: "All in the name",exturl: "https://tic-tac-toe-kiran.netlify.app/",category: ["fun"],creator: "Kiran Kumar"},
 ];
 
 services.sort((a, b) => a.name.localeCompare(b.name));
