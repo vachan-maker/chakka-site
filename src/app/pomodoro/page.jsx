@@ -1,8 +1,10 @@
 'use client'
 import Image from "next/image";
 import {useState,useRef} from "react";
+const WORK_TIME = 25 * 60;
+const BREAK_TIME = 5 * 60;
 function PomodoroTimer() {
-    const [time,setTime] = useState((1/5)*60);
+    const [time,setTime] = useState(WORK_TIME);
     const [start,setStart] = useState(false);
     const intervalRef = useRef(null);
     const [rest,setRest] = useState(false);
@@ -25,7 +27,7 @@ function PomodoroTimer() {
     }
     const startBreak = () => {
         setRest(true);
-        setTime(5*60);
+        setTime(BREAK_TIME);
         startTimer();
     }
 
