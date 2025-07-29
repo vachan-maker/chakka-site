@@ -8,6 +8,7 @@ function PomodoroTimer() {
 
     const startTimer = () => {
         setStart(true);
+        if(start){return;}
         intervalRef.current = setInterval(()=>{
             if(time>0) {
                 setTime(prev => prev-1);
