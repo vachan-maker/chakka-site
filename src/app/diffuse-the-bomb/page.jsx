@@ -18,7 +18,7 @@ const riddles = [
     }
 ]
 function DiffuseTheBomb() {
-    const [time,setTime] = useState(60);
+    const [time,setTime] = useState(5);
     const [currentIndex,setCurrentIndex] = useState(0);
     const [input,setInput] = useState('');
     const [score,setScore] = useState(0);
@@ -52,6 +52,11 @@ function DiffuseTheBomb() {
     return (
         <>
             <h1>{time}</h1>
+
+            {time === 0 && <video autoPlay className="absolute z-10 w-auto min-w-full min-h-full max-w-none">
+
+                <source src="/explosion.webm"/>
+            </video> }
             <div>
                 <h1 className="text-2xl">{riddles[currentIndex].question}</h1>
                 <b>Score: {score}</b>
