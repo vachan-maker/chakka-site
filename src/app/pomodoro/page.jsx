@@ -1,8 +1,8 @@
 'use client'
 import Image from "next/image";
 import {useState,useRef} from "react";
-const WORK_TIME = 25 * 60;
-const BREAK_TIME = 5 * 60;
+const WORK_TIME = (1/4) * 60;
+const BREAK_TIME = (1/2) * 60;
 function PomodoroTimer() {
     const [time,setTime] = useState(WORK_TIME);
     const [start,setStart] = useState(false);
@@ -26,9 +26,19 @@ function PomodoroTimer() {
 
     }
     const startBreak = () => {
-        setRest(true);
         setTime(BREAK_TIME);
         startTimer();
+    }
+
+    const handleClick = () => {
+        if(!rest){
+            setRest(true);
+            startBreak();
+        }
+        else {
+            setRest(false);
+            startTimer();
+        }
     }
 
     function formatTime(seconds) {
@@ -48,14 +58,11 @@ function PomodoroTimer() {
                 <h1 className="text-4xl text-amber-600">Pomodoro Timer</h1>
                 {!start && <Image src="/strawberry.png" alt="Image of a red strawberry" width={200} height={200}/>}
                 {start && <div className="text-6xl font-bold text-[#ea5951]">{formatTime(time)}</div>}
+                {time === 0 && !rest && <div className="flex flex-col gap-2">
+                    <div className="text-4xl font-bold text-[#ea5951]">Start Break?</div>
 
-                    {time === 0 && !rest &&
-                        <div className="flex flex-col gap-2">
-                        <div className="text-4xl font-bold text-[#ea5951]">Start Break?</div>
-                        <button className="btn" onClick={startBreak}>Let's Go!</button>
-
-                    </div>}
-                {!start && <button className="btn btn-xl" onClick={startTimer}>Start!</button>}
+                </div>}
+                {!start && <button className="btn btn-xl" onClick={handleClick}>Start!</button>}
 
 
 
