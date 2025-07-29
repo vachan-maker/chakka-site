@@ -39,15 +39,18 @@ function PomodoroTimer() {
 
     const handleClick = () => {
         if(!running){
-            if(rest) {
-                setTime(WORK_TIME);
+            if(time === 0) {
+                if (rest) {
+                    setTime(WORK_TIME);
+                } else {
+                    setTime(BREAK_TIME);
+                }
+                startTimer();
             }
-            else {
-                setTime(BREAK_TIME);
-            }
-            startTimer();
 
         }
+        setTime(WORK_TIME);
+        startTimer();
     }
 
     function formatTime(seconds) {
@@ -67,10 +70,10 @@ function PomodoroTimer() {
                 <h1 className="text-4xl text-amber-600">Pomodoro Timer</h1>
                 {!running && <Image src="/strawberry.png" alt="Image of a red strawberry" width={200} height={200}/>}
                 {running && <div className="text-6xl font-bold text-[#ea5951]">{formatTime(time)}</div>}
-                {time === 0 && !rest && <div className="flex flex-col gap-2">
+                {time === 0 && !rest && rest && (<div className="flex flex-col gap-2">
                     <div className="text-4xl font-bold text-[#ea5951]">Start Break?</div>
 
-                </div>}
+                </div>)}
                 {!running && <button className="btn btn-xl" onClick={handleClick}>Start!</button>}
 
 
