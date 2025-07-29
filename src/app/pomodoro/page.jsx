@@ -5,19 +5,30 @@ const WORK_TIME = (1/4) * 60;
 const BREAK_TIME = (1/2) * 60;
 function PomodoroTimer() {
     const [time,setTime] = useState(WORK_TIME);
-    const [start,setStart] = useState(false);
+    const [running,setRunning] = useState(false);
     const intervalRef = useRef(null);
     const [rest,setRest] = useState(false);
 
     const startTimer = () => {
-        setStart(true);
+        setRunning(true);
         if(intervalRef.current != null){return;}
         intervalRef.current = setInterval(()=>{
             setTime(prev => {
                 if(prev <= 1) {
                     clearInterval(intervalRef.current);
                     intervalRef.current = null;
-                    setStart(false);
+                    setRunning(false);
+
+                    if(!rest) {
+                        setRest(true);
+                        setTime(BREAK_TIME);
+                        console.log("REST:", rest)
+                    }
+                    else {
+                        setRest(false);
+                        setTime(WORK_TIME);
+                        console.log("REST:", rest)
+                    }
                     return 0;
                 }
                 return prev-1;
@@ -25,19 +36,17 @@ function PomodoroTimer() {
         },1000)
 
     }
-    const startBreak = () => {
-        setTime(BREAK_TIME);
-        startTimer();
-    }
 
     const handleClick = () => {
-        if(!rest){
-            setRest(true);
-            startBreak();
-        }
-        else {
-            setRest(false);
+        if(!running){
+            if(rest) {
+                setTime(WORK_TIME);
+            }
+            else {
+                setTime(BREAK_TIME);
+            }
             startTimer();
+
         }
     }
 
@@ -56,13 +65,13 @@ function PomodoroTimer() {
         <>
             <div className="min-h-dvh bg-amber-100 flex flex-col items-center justify-around">
                 <h1 className="text-4xl text-amber-600">Pomodoro Timer</h1>
-                {!start && <Image src="/strawberry.png" alt="Image of a red strawberry" width={200} height={200}/>}
-                {start && <div className="text-6xl font-bold text-[#ea5951]">{formatTime(time)}</div>}
+                {!running && <Image src="/strawberry.png" alt="Image of a red strawberry" width={200} height={200}/>}
+                {running && <div className="text-6xl font-bold text-[#ea5951]">{formatTime(time)}</div>}
                 {time === 0 && !rest && <div className="flex flex-col gap-2">
                     <div className="text-4xl font-bold text-[#ea5951]">Start Break?</div>
 
                 </div>}
-                {!start && <button className="btn btn-xl" onClick={handleClick}>Start!</button>}
+                {!running && <button className="btn btn-xl" onClick={handleClick}>Start!</button>}
 
 
 
