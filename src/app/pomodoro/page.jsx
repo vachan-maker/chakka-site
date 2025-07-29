@@ -23,6 +23,11 @@ function PomodoroTimer() {
         },1000)
 
     }
+    const startBreak = () => {
+        setRest(true);
+        setTime(5*60);
+        startTimer();
+    }
 
     function formatTime(seconds) {
         const m = Math.floor((seconds/60)).toString().padStart(2, "0");
@@ -44,10 +49,12 @@ function PomodoroTimer() {
 
                     {time === 0 && !rest &&
                         <div className="flex flex-col gap-2">
-                        <div className="text-4xl font-bold text-[#ea5951]">Start Break?
-                        <button className="btn">Start Break</button>
-                        </div>
+                        <div className="text-4xl font-bold text-[#ea5951]">Start Break?</div>
+                        <button className="btn" onClick={startBreak}>Let's Go!</button>
+
                     </div>}
+                {!start && <button className="btn btn-xl" onClick={startTimer}>Start!</button>}
+
 
 
             </div>
