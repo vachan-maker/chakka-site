@@ -8,5 +8,7 @@ export default function ResultWrapper() {
     const decodedText = decodeURI(text);
     console.log(decodedText);
 
-    return <Result text={decodedText} />;
+    return(<>
+        <Result text={decodedText} />
+        </>);
 }
