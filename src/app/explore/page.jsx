@@ -15,22 +15,6 @@ const RIT_Kutty = localFont({
     display: 'swap',
 });
 
-const services = [
-    { id: 1, name: "QR Code Generator", description: "Convert text/URL to QR Codes!", selfurl: "/qrcode" },
-    { id: 2, name: "Roll a dice!", description: "what the name says", selfurl: "/dice", category: ['fun'] },
-    { id: 3, name: "Nira", description: "A puzzle game", exturl: "https://nira20.vercel.app", category: ['fun'], creator: 'Abhiram A.K' },
-    { id: 4, name: "Space Hub", description: "Reach for the cosmos!", exturl: "https://vachan-maker.github.io/space-hub/index.html" },
-    { id: 5, name: "Business Card Creator", description: "Create a simple business card for yourself", exturl: "https://vachan-maker.github.io/business-card-creator/" },
-    { id: 6, name: "Love Calculator", description: "Displays a love meter based on your crush", exturl: "https://love-calc-project.netlify.app/", category: ['fun'] },
-    { id: 7, name: "Random Text Generator", description: "Generate random text with AI", selfurl: "/random-text" },
-    { id: 8, name: "Rock Paper Scissors", description: "A modern take on a classic game.", exturl: "https://chakka-paper-scissors.vercel.app/", category: ["fun"], creator: "Abhiram A.K" },
-    { id: 9, name: "Whatsapp Chat Unknown Number", description: "Chat with anyone without saving them to your contacts", exturl: "https://wa-chat-number.pages.dev/" },
-    { id: 10, name: "പഴം Counter", description: "Increase the count of bananas", selfurl: "/pazham-counter", category: ["fun"] },
-    { id: 11, name: "Chakka Facts", description: "Get a random fact about Jackfruit", exturl: "https://sanaashraf6666.github.io/Chakka-Facts/", category: ["fun"], creator: "Sana Ashraf" },
-    { id:12, name:"Useless Button", description: "Chumma oru potta button...!",selfurl: "/useless-button",category: ["fun"]},
-    {id:13, name:"Tic Tac Toe",description: "All in the name",exturl: "https://tic-tac-toe-kiran.netlify.app/",category: ["fun"],creator: "Kiran Kumar"},
-];
-
 services.sort((a, b) => a.name.localeCompare(b.name));
 
 export default function Services() {
