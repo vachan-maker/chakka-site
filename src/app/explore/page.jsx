@@ -64,7 +64,7 @@ export default function Services() {
     return (
         <>
             <div className="flex flex-col md:flex-row min-h-dvh justify-around">
-                <div className="flex flex-col items-center gap-20 border-amber-300 border-r-2">
+                <div className="flex flex-col items-center gap-20 md:border-amber-300 md:border-r-2">
                     <Link href='/'>
                         <Image
                             src={playing ? `/chakka-mascot.png` : chakka}
