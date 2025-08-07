@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useRef, useState, useEffect } from "react"
 import Card from "@/app/components/Card"
 import ExploreColumn from "@/app/components/ExploreColumn";
-
+import services from "@/app/data/data.json"
 
 import { SiGithub } from '@icons-pack/react-simple-icons';
 
