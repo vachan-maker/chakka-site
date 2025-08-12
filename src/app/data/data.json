@@ -88,7 +88,16 @@
     "description": "All in the name",
     "exturl": "https://tic-tac-toe-kiran.netlify.app/",
     "category": ["fun"],
-    "creator": "Kiran Kumar"
+    "creator": "Kiran Kumar",
+    "new":1
+  },
+  {
+    "id":14,
+    "name": "Zenith Timer",
+    "description": "Take a break from all yours tasks and free your mind.",
+    "exturl":"https://zen-minute.netlify.app/",
+    "creator": "Kiran Kumar",
+    "new":1
   }
 ]
 
