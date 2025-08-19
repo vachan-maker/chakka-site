@@ -7,7 +7,7 @@ function GenerateMotivation()
         <>
             <Header/>
             <section className="mx-auto my-0 p-5 max-w-lg">
-                <h1 className="font-bold text-3xl text-center">Ignite</h1>
+                <h1 className="font-bold text-3xl text-center">BoostMe!</h1>
                 <p className="text-xl text-center">Fuel your fire.🔥</p>
                 <p className="text-xs text-center">Please wait a few minutes after pressing the button!</p>
                 <form action="/api/motivation" method="POST" className = "mt-5">
