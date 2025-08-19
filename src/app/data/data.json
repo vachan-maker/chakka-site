@@ -124,6 +124,13 @@
     "category":["fun"],
     "creator":"Adhil Muhammed",
     "new":1
+  },
+  {
+    "id":18,
+    "name":"BoostMe",
+    "description":"quick motivational boost on demand",
+    "selfurl":"/motivation",
+    "new":1
   }
 ]
 
