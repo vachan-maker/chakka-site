@@ -62,7 +62,7 @@
   },
   {
     "id": 10,
-    "name": "പഴം Counter",
+    "name": "Pazham Counter",
     "description": "Increase the count of bananas",
     "selfurl": "/pazham-counter",
     "category": ["fun"]
@@ -97,6 +97,32 @@
     "description": "Take a break from all yours tasks and free your mind.",
     "exturl":"https://zen-minute.netlify.app/",
     "creator": "Kiran Kumar",
+    "new":1
+  },
+  {
+    "id":15,
+    "name": "Motivator",
+    "description": "Want motivation to do something you really want to do? Check this out.",
+    "selfurl": "/motivation",
+    "new":1
+
+  },
+  {
+    "id":16,
+    "name": "Jackfruit Whack!",
+    "description":"A fun little game",
+    "exturl":"whack.chakka.site",
+    "category":["fun"],
+    "creator":"Kiran Kumar",
+    "new":1
+  },
+  {
+    "id":17,
+    "name":"Jackfruit Catch",
+    "description":"Catch as much as jackfruit with a basket",
+    "exturl":"https://game.chakka.site",
+    "category":["fun"],
+    "creator":"Adhil Muhammed",
     "new":1
   }
 ]
