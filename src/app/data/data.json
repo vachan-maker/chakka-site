@@ -123,6 +123,16 @@
     "category":["fun"],
     "creator":"Adhil Muhammed",
     "new":1
+  },
+  {
+    "id":18,
+    "name":"Happy Onam!",
+    "description": "Generate a fun greeting card for Onam",
+    "exturl":"https://onam.chakka.site",
+    "category":["fun"],
+    "creator":"Aaroh Abraham",
+    "new":1
+
   }
 ]
 
