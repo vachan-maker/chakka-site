@@ -9,7 +9,6 @@ import ExploreColumn from "@/app/components/ExploreColumn";
 import services from "@/app/data/data.json"
 
 import { SiGithub } from '@icons-pack/react-simple-icons';
-import QuoteGenerator from './components/quoteGenerator'
 
 const RIT_Kutty = localFont({
     src: '../../../fonts/RIT-Kutty-Bold.woff2',
@@ -49,7 +48,7 @@ export default function Services() {
     return (
         <>
             <div className="flex flex-col md:flex-row min-h-dvh justify-around">
-                <div className="flex flex-col items-center gap-10 md:border-amber-300 md:border-r-2">
+                <div className="flex flex-col items-center gap-20 md:border-amber-300 md:border-r-2">
                     <Link href='/'>
                         <Image
                             src={playing ? `/chakka-mascot.png` : chakka}
@@ -77,10 +76,6 @@ export default function Services() {
                         </button>
 
                     )}
-                    
-                    <div className="text-center">
-                        <QuoteGenerator />
-                    </div>
                 </div>
 
                 <ExploreColumn title={'ടൂൾസ്'}>
