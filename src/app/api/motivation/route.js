@@ -2,12 +2,10 @@
 import {GoogleGenAI} from "@google/genai";
 import {redirect} from "next/navigation";
 
-const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY,
-    }
-);
-
 export async function POST(req){
+    const ai = new GoogleGenAI({
+        apiKey: process.env.GEMINI_API_KEY,
+    });
     const formData = await req.formData();
     const motivation = formData.get('motivation');
     const result = await ai.models.generateContent({
